@@ -20,7 +20,7 @@ import pandas_datareader as web
 START="2015-01-01"
 TODAY=date.today().strftime("%Y-%m-%d")
 
-st.title("機械学習で株価の予測")
+st.title("当たるといいね！機械学習で株価の予測")
 
 code=st.text_input('株のコードを入力 (日本の株は最後に.jpをつける)', '7974.JP')
 
@@ -42,7 +42,7 @@ data_load_state=st.text("Load data...")
 data=load_data(code)
 data_load_state.text("Loading data...done!")
 
-st.subheader("Raw data")
+st.subheader("5年分のデータ")
 st.write(data.tail())
 
     
@@ -63,7 +63,7 @@ m=Prophet()
 m.fit(df_train)
 future=m.make_future_dataframe(periods=period)
 forecast=m.predict(future)
-st.subheader('Forecast data')
+st.subheader('予測データ')
 st.write(forecast.tail())
 
 st.write('forcast data')
