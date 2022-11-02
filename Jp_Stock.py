@@ -20,7 +20,7 @@ import pandas_datareader as web
 START="2015-01-01"
 TODAY=date.today().strftime("%Y-%m-%d")
 
-st.title("当たるといいね！機械学習で株価の予測")
+st.title("機械学習で株価の予測")
 
 code=st.text_input('株のコードを入力 (日本の株は最後に.jpをつける)', '7974.JP')
 
